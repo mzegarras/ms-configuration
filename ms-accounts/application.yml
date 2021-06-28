@@ -1,1 +1,13 @@
-demo: 01
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+
+spring.data:
+    mongodb:
+      host: ms-accounts-db
+      username: accounts-user
+      password: pwd123456!
+      port: 27017
+      database: db
+      authentication-database: admin
