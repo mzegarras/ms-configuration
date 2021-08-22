@@ -1,0 +1,35 @@
+
+logging:
+  cloud.csonic.mscustomers: INFO
+
+microservice:
+  inPanic: true
+  name: ms-customers
+  jwt:
+    key: abc123456789012345678901234567890
+  correlations:
+    url: http://localhost:8080
+
+spring:
+  kafka:
+    template:
+      default-topic: customers
+    producer:
+      bootstrap-servers: localhost:29092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        ack: all
+        retries: 10
+        retry.backoff.ms: 1000
+    consumer:
+      bootstrap-servers: localhost:29092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: customers
+    admin:
+      properties:
+        bootstrap.servers: localhost:29092
+
+server:
+  port: 8081
