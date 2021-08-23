@@ -1,0 +1,34 @@
+
+logging:
+  com:
+    learnkafka:
+      producer: INFO
+
+microservice:
+  inPanic: true
+  name: ms-notifications
+  jwt:
+    key: abc123456789012345678901234567890
+  realtime:
+    url: https://csonic-test-default-rtdb.firebaseio.com/
+
+spring:
+  kafka:
+    template:
+      default-topic: notifications
+    producer:
+      bootstrap-servers: kafka:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        ack: all
+        retries: 10
+        retry.backoff.ms: 1000
+    consumer:
+      bootstrap-servers: kafka:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: notifications
+    admin:
+      properties:
+        bootstrap.servers: kafka:9092
