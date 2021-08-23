@@ -40,5 +40,3 @@ spring:
     admin:
       properties:
         bootstrap.servers: kafka:9092
-server:
-  port: 8082
