@@ -3,7 +3,7 @@ logging:
   cloud.csonic.mscustomers: INFO
 
 microservice:
-  inPanic: true
+  inPanic: false
   name: ms-customers
   jwt:
     key: abc123456789012345678901234567890
