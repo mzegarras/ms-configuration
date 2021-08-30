@@ -17,7 +17,7 @@ spring:
     template:
       default-topic: notifications
     producer:
-      bootstrap-servers: kafka:9092
+      bootstrap-servers: kafka01:9092,kafka02:9093,kafka03:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       properties:
@@ -25,10 +25,10 @@ spring:
         retries: 10
         retry.backoff.ms: 1000
     consumer:
-      bootstrap-servers: kafka:9092
+      bootstrap-servers: kafka01:9092,kafka02:9093,kafka03:9092
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       group-id: notifications
     admin:
       properties:
-        bootstrap.servers: kafka:9092
+        bootstrap.servers: kafka01:9092,kafka02:9093,kafka03:9092
