@@ -11,6 +11,7 @@ microservice:
     key: abc123456789012345678901234567890
   realtime:
     url: https://csonic-test-default-rtdb.firebaseio.com/
+  fireBaseServiceAccount: /service-account.json
 
 spring:
   kafka:
