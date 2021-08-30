@@ -29,4 +29,4 @@ spring:
       group-id: customers
     admin:
       properties:
-        bootstrap.servers: kafka01:9092
+        bootstrap.servers: kafka01:9092,kafka02:9093,kafka03:9092
