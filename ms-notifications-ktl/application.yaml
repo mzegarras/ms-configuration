@@ -30,6 +30,3 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       group-id: notifications
-    # admin:
-    #   properties:
-    #     bootstrap.servers: kafka01:9092,kafka02:9092
