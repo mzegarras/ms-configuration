@@ -37,6 +37,6 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       group-id: events
-    admin:
-      properties:
-        bootstrap.servers: kafka01:9092,kafka02:9093
+    # admin:
+    #   properties:
+    #     bootstrap.servers: kafka01:9092,kafka02:9093
