@@ -18,10 +18,19 @@ spring:
       bootstrap-servers: kafka01:9092,kafka02:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # properties:
+      #   ack: all
+      #   retries: 10
+      #   retry.backoff.ms: 1000
       properties:
         ack: all
-        retries: 10
+        retries: 2147483647
         retry.backoff.ms: 1000
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5
+        compression.type: snappy
+        linger.ms: 5
+        batch.size: 32768        
     consumer:
       bootstrap-servers: kafka01:9092,kafka02:9092
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
