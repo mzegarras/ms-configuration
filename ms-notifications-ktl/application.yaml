@@ -10,7 +10,7 @@ microservice:
   jwt:
     key: abc123456789012345678901234567890
   realtime:
-    url: https://csonic-test-default-rtdb.firebaseio.com/
+    url: https://fir-demo-8b4c6-default-rtdb.firebaseio.com/
   fireBaseServiceAccount: /service-account.json
 
 spring:
